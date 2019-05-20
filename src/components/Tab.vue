@@ -1,25 +1,25 @@
 <template>
 	<div class="nav">
-		<router-link tag="div" @click="changepage(1)" exact :to="{name:'home'}">
+		<router-link tag="div" exact :to="{name:'home'}">
 			<div class="nav-cnt">
 				<img src="../assets/images/shouye_unselected_icon.png" />
 				<span>首页</span>
 			</div>
 		</router-link>
-		<router-link tag="div" @click="changepage(2)" exact  :to="{name:'holiday'}">
+		<router-link tag="div" :to="{name:'holiday'}">
 			<div class="nav-cnt">
 				<img src="../assets/images/dujiadi_unselected_icon_.png" />
 				<span>度假地</span>
 			</div>
 		</router-link>
-		<router-link tag="div" @click="changepage(3)" exact :to="{name:'club'}">
+		<router-link tag="div" :to="{name:'club'}">
 			<div class="nav-cnt">
 				<img src="../assets/images/julebu_unselected_icon.png" />
 				<span>俱乐部</span>
 			</div>
 		</router-link>
-		<router-link tag="div" @click="changepage(4)" exact  :to="{name:'person'}">
-			<div class="nav-cnt">
+		<router-link tag="div"  :to="{name:'person'}">
+			<div class="nav-cnt" @click="changepage">
 				<img src="../assets/images/huiyuan_icon_unselected.png" />
 				<span>会员中心</span>
 			</div>
@@ -30,10 +30,8 @@
 <script>
 	export default {
 		name: 'Tab',
-		methods:{
-			changepage:function(a){
+		changepage:function(){
 			
-		}
 		}
 	}
 </script>
