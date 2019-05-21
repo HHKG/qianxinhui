@@ -20,7 +20,7 @@
 		</router-link>
 		<router-link tag="div"  :to="{name:'person'}">
 			<div class="nav-cnt" @click="changepage">
-				<img src="../assets/images/huiyuan_icon_unselected.png" />
+				<img :src="../assets/images/huiyuan_icon_unselected.png" />
 				<span>会员中心</span>
 			</div>
 		</router-link>
