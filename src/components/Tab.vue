@@ -1,26 +1,30 @@
 <template>
 	<div class="nav">
 		<router-link tag="div" exact :to="{name:'home'}">
-			<div class="nav-cnt">
+			<div class="nav-cnt" @click="changepage(1)">
+				<img src="../assets/images/shouye_unselected_icon.png" />
 				<img src="../assets/images/shouye_unselected_icon.png" />
 				<span>首页</span>
 			</div>
 		</router-link>
 		<router-link tag="div" :to="{name:'holiday'}">
-			<div class="nav-cnt">
+			<div class="nav-cnt" @click="changepage(2)">
+				<img src="../assets/images/dujiadi_unselected_icon_.png" />
 				<img src="../assets/images/dujiadi_unselected_icon_.png" />
 				<span>度假地</span>
 			</div>
 		</router-link>
 		<router-link tag="div" :to="{name:'club'}">
-			<div class="nav-cnt">
+			<div class="nav-cnt" @click="changepage(3)">
+				<img src="../assets/images/julebu_unselected_icon.png" />
 				<img src="../assets/images/julebu_unselected_icon.png" />
 				<span>俱乐部</span>
 			</div>
 		</router-link>
 		<router-link tag="div"  :to="{name:'person'}">
-			<div class="nav-cnt" @click="changepage">
-				<img :src="../assets/images/huiyuan_icon_unselected.png" />
+			<div class="nav-cnt" @click="changepage(4)">
+			    <img x-if="false" src="../assets/images/huiyuan_icon_unselected.png" />
+				<img src="../assets/images/huiyuan_icon_unselected.png" />
 				<span>会员中心</span>
 			</div>
 		</router-link>
@@ -30,8 +34,13 @@
 <script>
 	export default {
 		name: 'Tab',
-		changepage:function(){
+		data:{
 			
+		},
+		methods:{
+			changepage:function(a){
+				console.log(a);
+			}
 		}
 	}
 </script>
