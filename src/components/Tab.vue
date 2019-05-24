@@ -1,47 +1,52 @@
 <template>
 	<div class="nav">
 		<router-link tag="div" exact :to="{name:'home'}">
-			<div class="nav-cnt" @click="changepage(1)">
-				<img src="../assets/images/shouye_unselected_icon.png" />
+			<div class="nav-cnt" @click="changepage">
+				<img src="../assets/images/shouye_selected_icon_.png" />
 				<img src="../assets/images/shouye_unselected_icon.png" />
 				<span>首页</span>
 			</div>
 		</router-link>
 		<router-link tag="div" :to="{name:'holiday'}">
-			<div class="nav-cnt" @click="changepage(2)">
-				<img src="../assets/images/dujiadi_unselected_icon_.png" />
+			<div class="nav-cnt" @click="changepage">
+				<img v-show="show" src="../assets/images/dujiadi_selected_icon.png" />
 				<img src="../assets/images/dujiadi_unselected_icon_.png" />
 				<span>度假地</span>
 			</div>
 		</router-link>
 		<router-link tag="div" :to="{name:'club'}">
-			<div class="nav-cnt" @click="changepage(3)">
-				<img src="../assets/images/julebu_unselected_icon.png" />
+			<div class="nav-cnt" @click="changepage">
+				<img v-show="show" src="../assets/images/julebu_selected_icon.png" />
 				<img src="../assets/images/julebu_unselected_icon.png" />
 				<span>俱乐部</span>
 			</div>
 		</router-link>
-		<router-link tag="div"  :to="{name:'person'}">
-			<div class="nav-cnt" @click="changepage(4)">
-			    <img x-if="false" src="../assets/images/huiyuan_icon_unselected.png" />
+		<router-link tag="div" :to="{name:'person'}">
+			<div class="nav-cnt" @click="changepage">
+				<img v-show="show" src="../assets/images/huiyuan_icon_seleted.png" />
 				<img src="../assets/images/huiyuan_icon_unselected.png" />
 				<span>会员中心</span>
 			</div>
 		</router-link>
 	</div>
 </template>
-
 <script>
+	import $ from 'jquery';
 	export default {
 		name: 'Tab',
-		data:{
-			
+		data() {
+                return{
+                	show:false
+                }
 		},
-		methods:{
-			changepage:function(a){
-				console.log(a);
+		methods: {
+			changepage: function() {
+				console.log($('.nav-cnt>img').length);
+				for(var i=0;i<$('.nav-cnt>img').length;i++){
+				
+				}
 			}
-		}
+		},
 	}
 </script>
 
@@ -61,27 +66,31 @@
 		padding: 0 4%;
 		width: 92%;
 	}
+	
 	.nav-cnt {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
+	
 	.nav-cnt img {
 		width: 2rem;
 		height: 2rem;
 	}
-	.nav-cnt span{
-		color:#999;
+	
+	.nav-cnt span {
+		color: #999;
 		font-size: 1.2rem;
 	}
-	.router-link{
-	text-underline: none;	
+	
+	.router-link {
+		text-underline: none;
 	}
-	.router-link-active span{
-	 color: #496966;	
+	
+	.router-link-active span {
+		color: #496966;
 	}
-	.router-link-active img{
-		
-	}
+	
+	.router-link-active img {}
 </style>
