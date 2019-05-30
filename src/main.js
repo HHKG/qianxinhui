@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 import Tab from './components/Tab'
+import 'lib-flexible/flexible'
 import {routes} from './routes'
 Vue.use(VueRouter)
 const router = new VueRouter({
