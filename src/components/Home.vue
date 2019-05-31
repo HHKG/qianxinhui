@@ -38,8 +38,11 @@
 			window.console.log(dot);
 			$('.dots').html(dot);
 		})()
-		$('.dot-style').on('mouseover',function(){
-			window.console.log($(this).index);
+		$('.lunbo-cnt>ul>li').on('touchmove',function(){
+			var index=$('.dots>span').index(this);
+			var nowleft=-index*$('.lunbo-cnt').width();
+			window.console.log($('.lunbo-cnt').width());
+			$('.lunbo-cnt>ul').stop(true,false).animate({'margin-left':nowleft},300);
 		})
 	})
 </script>
